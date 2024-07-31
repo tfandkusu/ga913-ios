@@ -26,6 +26,8 @@ struct LandmarkList: View {
             List {
                 Toggle(isOn: $showFavoritesOnly) {
                     Text("Favorites only")
+                }.onChange(of: showFavoritesOnly) {
+                    print("SendEvent favorite_only(checked = \(showFavoritesOnly))")
                 }
 
                 ForEach(filteredLandmarks) { landmark in
