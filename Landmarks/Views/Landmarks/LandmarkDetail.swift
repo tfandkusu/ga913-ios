@@ -7,6 +7,7 @@ A view showing the details for a landmark.
 
 import SwiftUI
 
+/// ランドマーク詳細画面
 struct LandmarkDetail: View {
     @Environment(ModelData.self) var modelData
     var landmark: Landmark
