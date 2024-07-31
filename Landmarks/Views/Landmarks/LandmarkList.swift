@@ -7,10 +7,14 @@ A view showing a list of landmarks.
 
 import SwiftUI
 
+/// 最初のリスト画面
 struct LandmarkList: View {
+    /// データ層
     @Environment(ModelData.self) var modelData
+    /// Favorites only スイッチの状態
     @State private var showFavoritesOnly = false
 
+    /// 表示するランドマーク一覧
     var filteredLandmarks: [Landmark] {
         modelData.landmarks.filter { landmark in
             (!showFavoritesOnly || landmark.isFavorite)

@@ -24,7 +24,6 @@
 
 /* Begin PBXFileReference section */
 		6AF17FBC250C47AD4B5BC2FB /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
-		8016A7122042026B58FF1299 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		C20D77EA24B665D7002E7AEA /* Landmarks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landmarks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20D77ED24B665D7002E7AEA /* LandmarksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarksApp.swift; sourceTree = "<group>"; };
 		C20D77EF24B665D7002E7AEA /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
@@ -68,7 +67,6 @@
 				C20D77EC24B665D7002E7AEA /* Landmarks */,
 				C20D77EB24B665D7002E7AEA /* Products */,
 				00ABA66E85532B385D477CBF /* Configuration */,
-				E573155042573F7430EB4C1C /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,14 +144,6 @@
 				C2C583BE24DB80C300DD0019 /* Helpers */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		E573155042573F7430EB4C1C /* LICENSE */ = {
-			isa = PBXGroup;
-			children = (
-				8016A7122042026B58FF1299 /* LICENSE.txt */,
-			);
-			path = LICENSE;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
