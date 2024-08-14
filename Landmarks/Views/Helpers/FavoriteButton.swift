@@ -1,9 +1,9 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
+ See the LICENSE.txt file for this sample’s licensing information.
 
-Abstract:
-A button that acts as a favorites indicator.
-*/
+ Abstract:
+ A button that acts as a favorites indicator.
+ */
 
 import SwiftUI
 
