@@ -1,9 +1,9 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
+ See the LICENSE.txt file for this sample’s licensing information.
 
-Abstract:
-A view showing the details for a landmark.
-*/
+ Abstract:
+ A view showing the details for a landmark.
+ */
 
 import SwiftUI
 
@@ -18,7 +18,7 @@ struct LandmarkDetail: View {
 
     var body: some View {
         @Bindable var modelData = modelData
-        
+
         ScrollView {
             MapView(coordinate: landmark.locationCoordinate)
                 .frame(height: 300)

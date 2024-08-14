@@ -1,12 +1,12 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
+ See the LICENSE.txt file for this sample’s licensing information.
 
-Abstract:
-A view showing a list of landmarks.
-*/
+ Abstract:
+ A view showing a list of landmarks.
+ */
 
-import SwiftUI
 import FirebaseAnalytics
+import SwiftUI
 
 /// 最初のリスト画面
 struct LandmarkList: View {
@@ -18,7 +18,7 @@ struct LandmarkList: View {
     /// 表示するランドマーク一覧
     var filteredLandmarks: [Landmark] {
         modelData.landmarks.filter { landmark in
-            (!showFavoritesOnly || landmark.isFavorite)
+            !showFavoritesOnly || landmark.isFavorite
         }
     }
 
