@@ -6,6 +6,7 @@ A view showing a list of landmarks.
 */
 
 import SwiftUI
+import FirebaseAnalytics
 
 /// 最初のリスト画面
 struct LandmarkList: View {
@@ -42,7 +43,11 @@ struct LandmarkList: View {
             .navigationTitle("Landmarks")
         } detail: {
             Text("Select a Landmark")
-        }
+        }.onAppear(perform: {
+            Analytics.logEvent(AnalyticsEventScreenView, parameters: [
+                AnalyticsParameterScreenName: AnalyticsEvent.Screen.LandmarkList().eventName,
+            ])
+        })
     }
 }
 
