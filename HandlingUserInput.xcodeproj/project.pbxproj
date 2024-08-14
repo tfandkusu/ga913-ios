@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B209B8562C6CF6E800CA4580 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = B209B8552C6CF6E800CA4580 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		B209B8582C6CF7E600CA4580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B209B8572C6CF7E600CA4580 /* GoogleService-Info.plist */; };
 		B2602E532C6CEEDC00E33ED3 /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2602E512C6CEEDC00E33ED3 /* AnalyticsEvent.swift */; };
 		C20D77EE24B665D7002E7AEA /* LandmarksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20D77ED24B665D7002E7AEA /* LandmarksApp.swift */; };
 		C20D77F024B665D7002E7AEA /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20D77EF24B665D7002E7AEA /* LandmarkDetail.swift */; };
@@ -25,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		6AF17FBC250C47AD4B5BC2FB /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		B209B8572C6CF7E600CA4580 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2602E512C6CEEDC00E33ED3 /* AnalyticsEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
 		C20D77EA24B665D7002E7AEA /* Landmarks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landmarks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20D77ED24B665D7002E7AEA /* LandmarksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarksApp.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B209B8562C6CF6E800CA4580 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +95,7 @@
 		C20D77EC24B665D7002E7AEA /* Landmarks */ = {
 			isa = PBXGroup;
 			children = (
+				B209B8572C6CF7E600CA4580 /* GoogleService-Info.plist */,
 				B2602E522C6CEEDC00E33ED3 /* Analytics */,
 				C20D77ED24B665D7002E7AEA /* LandmarksApp.swift */,
 				C2FEB33624B7C9DA004FAB73 /* Views */,
@@ -173,6 +178,9 @@
 			dependencies = (
 			);
 			name = Landmarks;
+			packageProductDependencies = (
+				B209B8552C6CF6E800CA4580 /* FirebaseAnalyticsWithoutAdIdSupport */,
+			);
 			productName = Landmarks;
 			productReference = C20D77EA24B665D7002E7AEA /* Landmarks.app */;
 			productType = "com.apple.product-type.application";
@@ -202,6 +210,9 @@
 				Base,
 			);
 			mainGroup = C20D77E124B665D7002E7AEA;
+			packageReferences = (
+				B209B8542C6CF6E800CA4580 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = C20D77EB24B665D7002E7AEA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -217,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C20D77F524B665D8002E7AEA /* Preview Assets.xcassets in Resources */,
+				B209B8582C6CF7E600CA4580 /* GoogleService-Info.plist in Resources */,
 				C20D77F224B665D8002E7AEA /* Assets.xcassets in Resources */,
 				C20D780724B685AC002E7AEA /* landmarkData.json in Resources */,
 			);
@@ -448,6 +460,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B209B8542C6CF6E800CA4580 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B209B8552C6CF6E800CA4580 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B209B8542C6CF6E800CA4580 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C20D77E224B665D7002E7AEA /* Project object */;
 }
