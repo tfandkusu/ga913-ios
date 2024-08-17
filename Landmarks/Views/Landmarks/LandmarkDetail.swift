@@ -16,6 +16,8 @@ struct LandmarkDetail: View {
         modelData.landmarks.firstIndex(where: { $0.id == landmark.id })!
     }
 
+    private let analyticsEventSender = AnalyticsEventSender()
+
     var body: some View {
         @Bindable var modelData = modelData
 
@@ -31,7 +33,17 @@ struct LandmarkDetail: View {
                 HStack {
                     Text(landmark.name)
                         .font(.title)
-                    FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
+                    FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite, onChanged: { favorite in
+                        if favorite {
+                            analyticsEventSender.sendAction(
+                                AnalyticsEvent.Action.LandmarkDetail.FavoriteOn(id: landmark.id, name: landmark.name)
+                            )
+                        } else {
+                            analyticsEventSender.sendAction(
+                                AnalyticsEvent.Action.LandmarkDetail.FavoriteOff(id: landmark.id, name: landmark.name)
+                            )
+                        }
+                    })
                 }
 
                 HStack {
@@ -52,6 +64,9 @@ struct LandmarkDetail: View {
         }
         .navigationTitle(landmark.name)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            analyticsEventSender.sendScreen(AnalyticsEvent.Screen.LandmarkDetail())
+        }
     }
 }
 
