@@ -1,7 +1,7 @@
 import FirebaseAnalytics
 
 struct AnalyticsEventSender {
-    func sendScreen(screen: AnalyticsEventScreen) {
+    func sendScreen(_ screen: AnalyticsEventScreen) {
         if screen.isConversionEvent {
             Analytics.logEvent(screen.eventName, parameters: nil)
         } else {
@@ -11,7 +11,7 @@ struct AnalyticsEventSender {
         }
     }
 
-    func sendAction(action: AnalyticsEventAction) {
+    func sendAction(_ action: AnalyticsEventAction) {
         if action.isConversionEvent {
             Analytics.logEvent(action.eventName, parameters: action.eventParameters)
         } else {

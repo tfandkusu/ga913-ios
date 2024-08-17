@@ -31,7 +31,7 @@ struct LandmarkList: View {
                     Text("Favorites only")
                 }.onChange(of: showFavoritesOnly) {
                     analyticsEventSender.sendAction(
-                        action: AnalyticsEvent.Action.LandmarkList.FavoritesOnlySwitch(favoritesOnly: showFavoritesOnly)
+                        AnalyticsEvent.Action.LandmarkList.FavoritesOnlySwitch(favoritesOnly: showFavoritesOnly)
                     )
                 }
 
@@ -46,7 +46,7 @@ struct LandmarkList: View {
             .animation(.default, value: filteredLandmarks)
             .navigationTitle("Landmarks")
             .onAppear {
-                analyticsEventSender.sendScreen(screen: AnalyticsEvent.Screen.LandmarkList())
+                analyticsEventSender.sendScreen(AnalyticsEvent.Screen.LandmarkList())
             }
         } detail: {
             Text("Select a Landmark")

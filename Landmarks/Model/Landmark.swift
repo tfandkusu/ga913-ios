@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 struct Landmark: Hashable, Codable, Identifiable {
-    var id: Int
+    var id: Int64
     var name: String
     var park: String
     var state: String
