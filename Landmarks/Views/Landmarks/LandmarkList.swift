@@ -15,6 +15,8 @@ struct LandmarkList: View {
     /// Favorites only スイッチの状態
     @State private var showFavoritesOnly = false
 
+    private let analyticsEventSender = AnalyticsEventSender()
+
     /// 表示するランドマーク一覧
     var filteredLandmarks: [Landmark] {
         modelData.landmarks.filter { landmark in
@@ -28,7 +30,9 @@ struct LandmarkList: View {
                 Toggle(isOn: $showFavoritesOnly) {
                     Text("Favorites only")
                 }.onChange(of: showFavoritesOnly) {
-                    print("SendEvent favorite_only(checked = \(showFavoritesOnly))")
+                    analyticsEventSender.sendAction(
+                        action: AnalyticsEvent.Action.LandmarkList.FavoritesOnlySwitch(favoritesOnly: showFavoritesOnly)
+                    )
                 }
 
                 ForEach(filteredLandmarks) { landmark in
@@ -41,13 +45,12 @@ struct LandmarkList: View {
             }
             .animation(.default, value: filteredLandmarks)
             .navigationTitle("Landmarks")
+            .onAppear {
+                analyticsEventSender.sendScreen(screen: AnalyticsEvent.Screen.LandmarkList())
+            }
         } detail: {
             Text("Select a Landmark")
-        }.onAppear(perform: {
-            Analytics.logEvent(AnalyticsEventScreenView, parameters: [
-                AnalyticsParameterScreenName: AnalyticsEvent.Screen.LandmarkList().eventName,
-            ])
-        })
+        }
     }
 }
 

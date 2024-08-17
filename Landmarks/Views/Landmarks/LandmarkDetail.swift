@@ -16,6 +16,8 @@ struct LandmarkDetail: View {
         modelData.landmarks.firstIndex(where: { $0.id == landmark.id })!
     }
 
+    private let analyticsEventSender = AnalyticsEventSender()
+
     var body: some View {
         @Bindable var modelData = modelData
 
@@ -52,6 +54,9 @@ struct LandmarkDetail: View {
         }
         .navigationTitle(landmark.name)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            analyticsEventSender.sendScreen(screen: AnalyticsEvent.Screen.LandmarkDetail())
+        }
     }
 }
 
