@@ -6,6 +6,7 @@
  */
 
 import FirebaseAnalytics
+import ga913kmp
 import SwiftUI
 
 /// 最初のリスト画面
@@ -33,6 +34,12 @@ struct LandmarkList: View {
                     analyticsEventSender.sendAction(
                         AnalyticsEvent.Action.LandmarkList.FavoritesOnlySwitch(favoritesOnly: showFavoritesOnly)
                     )
+                    // KMP 版の使用例
+                    /*
+                     analyticsEventSender.sendAction(
+                         KmpAnalyticsEventAction.LandmarkListFavoritesOnlySwitch(favoritesOnly: showFavoritesOnly)
+                     )
+                      */
                 }
 
                 ForEach(filteredLandmarks) { landmark in
@@ -47,6 +54,10 @@ struct LandmarkList: View {
             .navigationTitle("Landmarks")
             .onAppear {
                 analyticsEventSender.sendScreen(AnalyticsEvent.Screen.LandmarkList())
+                // KMP 版の使用例
+                /*
+                 analyticsEventSender.sendScreen(KmpAnalyticsEventScreen.LandmarkList())
+                  */
             }
         } detail: {
             Text("Select a Landmark")
