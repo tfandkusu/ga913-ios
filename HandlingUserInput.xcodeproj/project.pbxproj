@@ -11,6 +11,7 @@
 		B209B8582C6CF7E600CA4580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B209B8572C6CF7E600CA4580 /* GoogleService-Info.plist */; };
 		B2483C582C706D42005C62BC /* AnalyticsEventSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2483C572C706D42005C62BC /* AnalyticsEventSender.swift */; };
 		B2602E532C6CEEDC00E33ED3 /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2602E512C6CEEDC00E33ED3 /* AnalyticsEvent.swift */; };
+		B2D638A72C7F8F2B0000D4E1 /* ga913kmp in Frameworks */ = {isa = PBXBuildFile; productRef = B2D638A62C7F8F2B0000D4E1 /* ga913kmp */; };
 		C20D77EE24B665D7002E7AEA /* LandmarksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20D77ED24B665D7002E7AEA /* LandmarksApp.swift */; };
 		C20D77F024B665D7002E7AEA /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20D77EF24B665D7002E7AEA /* LandmarkDetail.swift */; };
 		C20D77F224B665D8002E7AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C20D77F124B665D8002E7AEA /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B209B8562C6CF6E800CA4580 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				B2D638A72C7F8F2B0000D4E1 /* ga913kmp in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +185,7 @@
 			name = Landmarks;
 			packageProductDependencies = (
 				B209B8552C6CF6E800CA4580 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				B2D638A62C7F8F2B0000D4E1 /* ga913kmp */,
 			);
 			productName = Landmarks;
 			productReference = C20D77EA24B665D7002E7AEA /* Landmarks.app */;
@@ -215,6 +218,7 @@
 			mainGroup = C20D77E124B665D7002E7AEA;
 			packageReferences = (
 				B209B8542C6CF6E800CA4580 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B2D638A52C7F8F2B0000D4E1 /* XCRemoteSwiftPackageReference "ga913-kmp" */,
 			);
 			productRefGroup = C20D77EB24B665D7002E7AEA /* Products */;
 			projectDirPath = "";
@@ -474,6 +478,14 @@
 				minimumVersion = 11.0.0;
 			};
 		};
+		B2D638A52C7F8F2B0000D4E1 /* XCRemoteSwiftPackageReference "ga913-kmp" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tfandkusu/ga913-kmp";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -481,6 +493,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B209B8542C6CF6E800CA4580 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		B2D638A62C7F8F2B0000D4E1 /* ga913kmp */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2D638A52C7F8F2B0000D4E1 /* XCRemoteSwiftPackageReference "ga913-kmp" */;
+			productName = ga913kmp;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
