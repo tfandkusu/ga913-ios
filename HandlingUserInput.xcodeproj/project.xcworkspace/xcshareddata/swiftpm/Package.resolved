@@ -33,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/tfandkusu/ga913-kmp",
       "state" : {
-        "revision" : "e7dafaa8234d449e206072c8fe7f517b913d4d33",
-        "version" : "0.0.3"
+        "revision" : "14b8847986a2cf34efc465b4850c04f3167cba2a",
+        "version" : "0.1.0"
       }
     },
     {
