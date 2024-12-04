@@ -25,8 +25,10 @@ struct LandmarkList: View {
         }
     }
 
+    @AppStorage("navigationPath") var navigationPath: [Landmark] = []
+
     var body: some View {
-        NavigationSplitView {
+        NavigationStack(path: $navigationPath) {
             List {
                 Toggle(isOn: $showFavoritesOnly) {
                     Text("Favorites only")
@@ -43,15 +45,16 @@ struct LandmarkList: View {
                 }
 
                 ForEach(filteredLandmarks) { landmark in
-                    NavigationLink {
-                        LandmarkDetail(landmark: landmark)
-                    } label: {
+                    NavigationLink(value: landmark) {
                         LandmarkRow(landmark: landmark)
                     }
                 }
             }
             .animation(.default, value: filteredLandmarks)
             .navigationTitle("Landmarks")
+            .navigationDestination(for: Landmark.self) { landmark in
+                LandmarkDetail(landmark: landmark)
+            }
             .onAppear {
                 analyticsEventSender.sendScreen(AnalyticsEvent.Screen.LandmarkList())
                 // KMP 版の使用例
@@ -59,8 +62,6 @@ struct LandmarkList: View {
                  analyticsEventSender.sendScreen(KmpAnalyticsEventScreen.LandmarkList())
                   */
             }
-        } detail: {
-            Text("Select a Landmark")
         }
     }
 }
